@@ -3,140 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dis/ddv</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <title>maed by bedo</title>
+  <!-- خط واضح جدا -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #ff0000;
-      color: #ffffff;
-      font-family: 'Orbitron', sans-serif;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      color: #fff;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* شبكة خفيفة */
+      position: relative;
     }
-
+    .bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+      filter: blur(2px) brightness(0.5);
+    }
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
     .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin-bottom: 20px;
     }
-
     .image img {
       width: 300px;
-      border: 2px solid #ff0000;
-      filter: grayscale(100%);
+      border: 3px solid #ffffff00;
+      border-radius: 10px;
+      filter: grayscale(0%) drop-shadow(0 0 10px #000000);
+      box-shadow: 0 0 30px #000000a0;
+      background: rgba(0,0,0,0.3);
+      /* تم حذف التحريك */
+      transition: none;
     }
-
+    .image img:hover {
+      /* تم حذف التحريك */
+      transform: none;
+    }
     h1 {
-      font-size: 36px;
-      color: #999999;
-      margin: 0 0 20px 0;
+      font-size: 38px;
+      color: #fff;
+      margin: 20px 0 10px 0;
+      text-shadow: 0 0 10px #000000, 0 0 30px #000;
+      letter-spacing: 2px;
+      font-weight: 900;
+      text-align: center;
     }
-
     .terminal {
-      background: #000000;
+      background: rgba(0, 0, 0, 0);
       padding: 20px;
-      border-radius: 5px;
+      border-radius: 8px;
       width: 80%;
       max-width: 600px;
-      font-size: 16px;
-      line-height: 1.6;
-      color: rgb(133, 122, 122);
-      box-shadow: 0 0 15px rgb(141, 141, 141);
+      font-size: 18px;
+      line-height: 1.7;
+      color: #ffffff;
+      box-shadow: 0 0 15px #00000000;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      text-align: center; /* جعل النص في الوسط */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .terminal span.command {
-      color: #505050;
+    .terminal > div {
+      padding: 12px 18px;
+      background: #00000000;
+      border-radius: 7px;
+      margin-bottom: 12px;
+      border-left: 5px solid #00000000;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center; /* جعل كل بوكس في الوسط */
     }
-
-    .discord-box {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: #000000;
-      padding: 15px;
-      border: 1px solid #636363;
-      border-radius: 5px;
-    }
-
-    .discord-box a {
-      display: block;
-      margin-bottom: 10px;
-      color: rgb(87, 75, 75);
-      text-decoration: none;
-    }
-
     .footer {
-      position: absolute;
+      position: fixed;
       bottom: 20px;
-      font-size: 12px;
-      color: #5e5757;
+      left: 0;
+      width: 100vw;
+      text-align: center;
+      font-size: 15px;
+      color: #fff;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px #000000;
+      font-weight: bold;
+      z-index: 2;
+    }
+    @media (max-width: 600px) {
+      .image img { width: 90vw; }
+      .terminal { font-size: 15px; }
+      h1 { font-size: 24px; }
     }
   </style>
 </head>
 <body>
-
-  <div class="discord-box">
-    <a href="https://discord.gg/ddv">You can find everything in discord</a>
-    <a href="https://discord.gg/ddv">You can find everything in discord</a>
-    <a href="https://discord.gg/ddv">You can find everything in discord</a>
-    <a href="https://discord.gg/ddv">You can find everything in discord</a>
-    <br />
-    <a href="https://discord.gg/ddv">discord.gg/ddv</a>
-  </div>
+  <!-- فيديو خلفية -->
+  <video class="bg-video" autoplay loop muted playsinline>
+    <source src="https://cdn.discordapp.com/attachments/1248899695464419399/1394565011271323718/skod.5.mov?ex=68774560&is=6875f3e0&hm=c1c56aa4929f299a9a55cb66be9589a6f233f65ac3a380781e257af2f6fd2434&" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
 
   <div class="image">
-    <img src="https://cdn.discordapp.com/attachments/1308181430991323237/1394211879617826906/01eff86a26a3a247bd89c265215840d5.jpg?ex=6875fc7f&is=6874aaff&hm=94c72b5388114ae3d20b9530f2b4343807089b375076d7e5cdfbf97cd9d434a6&" alt="Itachi" />
+    <img src="https://media.discordapp.net/attachments/1248899695464419399/1394558389194854410/e533200bcfdf100086233813f9dcff29.jpg?ex=68773f35&is=6875edb5&hm=7db5a8d7bc82b37f2bcd168b93ed420da9976583e7c91c5246135f77c7002be3&=&format=webp&width=992&height=976" alt="Itachi" />
   </div>
 
-  <h1>💀HACKED BY discord/511</h1>
+  <h1>💀 HACKED BY  3roooj & Sa6i w mat3a6e 💀</h1>
 
   <div class="terminal">
-    <span class="command">ddv.com</span><br />
-    <strong style="color:rgb(104, 104, 104)">discrd/ddv :</strong> send Regards 
+    <div>
+      ! .. اطلق شنب ماهو بقادح -
+    </div>
+    <div>
+      ! .. اذا خوتك بدون افعال انبطح ومتع العيال -
+    </div>
+    <div>
+      ! ..في قانون المذرحه خويك لاتطرحه  -
+    </div>
   </div>
 
   <div class="footer">
-    OFFICALLY BLACK$HAMMER - SubaieNetwork 😎😘
+        3roooj & Sa6i w mat3a6e
   </div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Sound Test</title>
-</head>
-<body style="background-color:black; color:rgb(0, 0, 0); text-align:center; padding-top:50px;">
 
-  <h1></h1>
-
+  <!-- الصوت يبقى كما هو -->
   <audio autoplay loop hidden>
-  <source src="https://files.catbox.moe/kyp6up.mp3" type="audio/mpeg">
-</audio>
-
-  <script>
-    function playAudioOnce() {
-      const audio = document.getElementById("bg-audio");
-      audio.play().then(() => {
-        console.log("🎵 الصوت شغال");
-      }).catch((err) => {
-        console.log("❌ ما اشتغل: ", err);
-      });
-
-      // نوقف الاستماع بعد أول محاولة
-      document.removeEventListener("mousemove", playAudioOnce);
-      document.removeEventListener("click", playAudioOnce);
-    }
-
-    document.addEventListener("mousemove", playAudioOnce);
-    document.addEventListener("click", playAudioOnce);
-  </script>
-
-</body>
-</html>
-
-
+    <source src="https://files.catbox.moe/q42msc.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>
